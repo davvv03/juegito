@@ -1,6 +1,6 @@
 import pygame
 import sys
-
+#hdjshjsa
 from pygame.locals import *
 
 blanco = (255, 255, 255)
