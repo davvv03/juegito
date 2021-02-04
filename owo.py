@@ -1,6 +1,6 @@
 import pygame
 import sys
-#hdjshjsa
+#SHARON TE AMO CASATE CONMIGO
 from pygame.locals import *
 
 blanco = (255, 255, 255)
