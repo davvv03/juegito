@@ -1,7 +1,7 @@
 import pygame
 import sys
 from pygame.locals import *
-
+#YO SE QUE ME AMAS UWU
 blanco = (255, 255, 255)
 negro = (0, 0, 0)
 rojo = (255, 0, 0)
