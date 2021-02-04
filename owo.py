@@ -1,7 +1,12 @@
 import pygame
 import sys
 from pygame.locals import *
+<<<<<<< HEAD
 #YO SE QUE ME AMAS UWU
+=======
+# Fernan acepto bb
+
+>>>>>>> c08dab3bcd9a5f1de0ec4c9051125a6642867643
 blanco = (255, 255, 255)
 negro = (0, 0, 0)
 rojo = (255, 0, 0)
