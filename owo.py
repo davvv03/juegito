@@ -15,7 +15,7 @@ pantalla = pygame.display.set_mode((1280,720),RESIZABLE)
 pygame.display.set_caption("ULTRA OWO")
 
 fondo = pygame.image.load("imagenes/FondoFinal2.png")
-pantalla.blit(fondo, (0, 0))
+pantalla.blit(fondo, (0,0))
 
 
 class Arbusto(pygame.sprite.Sprite):
