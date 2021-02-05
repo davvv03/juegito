@@ -10,7 +10,7 @@ verde = (0, 255, 0)
 amarillo = (255, 255, 0)
 morado = (153, 5, 182)
 
-pantalla = pygame.display.set_mode((1300, 700))
+pantalla = pygame.display.set_mode((1280,720),RESIZABLE)
 
 pygame.display.set_caption("ULTRA OWO")
 
