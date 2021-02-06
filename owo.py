@@ -1,6 +1,7 @@
 import pygame,sys
 from pygame.locals import *
-#UNO SOLITO
+#Estos colores funcionan para dibujar en pantalla simplemente se crean las variables 
+#para usarlos con mayor facilidad
 blanco = (255, 255, 255)
 negro = (0, 0, 0)
 rojo = (255, 0, 0)
@@ -9,14 +10,24 @@ verde = (0, 255, 0)
 amarillo = (255, 255, 0)
 morado = (153, 5, 182)
 
+
+#Se determina el tamaño que va a tomar la pantalla ademas de su tipo esta es su estructura
+#set_mode (tamaño = (0, 0), banderas = 0, profundidad = 0, pantalla = 0, vsync = 0)
 pantalla = pygame.display.set_mode((1300,700))
 
+
+#Nombre de la ventana
 pygame.display.set_caption("ULTRA OWO")
 
+
+#Se carga la imagen fondo y luego con .blit se establece la coordenada en la que se va a dibujar
+#estructura: blit (fuente, destino, área = Ninguno, banderas_especiales = 0)
 fondo = pygame.image.load("imagenes/FondoFinal2.png")
 pantalla.blit(fondo, (0,0))
 
 
+#Se crea la clase arbusto y hereda de Sprite para que pueda usar los metodos incluidos en dicha clase
+#cualquier sprite debe heredar de esa clase
 class Arbusto(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
