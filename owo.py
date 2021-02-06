@@ -61,7 +61,7 @@ class Arbusto(pygame.sprite.Sprite):
             if self.posimagen > len(self.listaimagenes)-1:
                 self.posimagen = 0
 
-
+#Cargar los Sprites para correr izq y der
 Osoright=[
             pygame.image.load("sprites/OsoCaminando1.png"),
             pygame.image.load("sprites/OsoCaminando2.png"),
@@ -183,12 +183,16 @@ def MiJuego():
             if event.type == pygame.KEYDOWN:
 
                 if event.key == pygame.K_RIGHT:
-
-                    jugadorPosX += 10
+                    if jugadorPosX>=1236:
+                        jugadorPosX=1236
+                    else:
+                        jugadorPosX += 10
 
                 if event.key == pygame.K_LEFT:
-
-                    jugadorPosX -=10
+                    if jugadorPosX<=10:
+                        jugadorPosX=0
+                    else:
+                        jugadorPosX -=10
 
             if event.type == pygame.KEYDOWN:
 
