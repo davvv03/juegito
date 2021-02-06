@@ -19,6 +19,8 @@ pantalla = pygame.display.set_mode((Ancho,Alto))
 
 
 #Nombre de la ventana
+icono=pygame.image.load("imagenes/IconFinal4.png")
+pygame.display.set_icon(icono)
 pygame.display.set_caption("ULTRA OWO")
 
 
