@@ -29,11 +29,11 @@ pantalla.blit(fondo, (0,0))
 #Se crea la clase arbusto y hereda de Sprite para que pueda usar los metodos incluidos en dicha clase
 #cualquier sprite debe heredar de esa clase
 class Arbusto(pygame.sprite.Sprite):
+    
     def __init__(self):
         super().__init__()
         self.imagenA = pygame.image.load("sprites/arbusto64alfa.png")
         self.imagenB = pygame.image.load("sprites/arbusto64alfa.png")
-
         self.listaimagenes = [self.imagenA, self.imagenB]
         self.posimagen = 0
         self.imagenarbusto = self.listaimagenes[self.posimagen]
