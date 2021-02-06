@@ -1,5 +1,4 @@
-import pygame
-import sys
+import pygame,sys
 from pygame.locals import *
 #UNO SOLITO
 blanco = (255, 255, 255)
