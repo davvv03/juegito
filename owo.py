@@ -13,7 +13,9 @@ morado = (153, 5, 182)
 
 #Se determina el tamaño que va a tomar la pantalla ademas de su tipo esta es su estructura
 #set_mode (tamaño = (0, 0), banderas = 0, profundidad = 0, pantalla = 0, vsync = 0)
-pantalla = pygame.display.set_mode((1300,700))
+Ancho=1300
+Alto=700
+pantalla = pygame.display.set_mode((Ancho,Alto))
 
 
 #Nombre de la ventana
@@ -147,9 +149,9 @@ class Jugador(pygame.sprite.Sprite):
 
 
 
-
+#Bucle General del Juego
 def MiJuego():
-
+    #Inicializacion de Pygame
     pygame.init()
 
     jugadorPosX = 0
