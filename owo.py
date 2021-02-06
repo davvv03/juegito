@@ -29,7 +29,7 @@ pantalla.blit(fondo, (0,0))
 #Se crea la clase arbusto y hereda de Sprite para que pueda usar los metodos incluidos en dicha clase
 #cualquier sprite debe heredar de esa clase
 class Arbusto(pygame.sprite.Sprite):
-    
+
     def __init__(self):
         super().__init__()
         self.imagenA = pygame.image.load("sprites/arbusto64alfa.png")
@@ -57,6 +57,22 @@ class Arbusto(pygame.sprite.Sprite):
             if self.posimagen > len(self.listaimagenes)-1:
                 self.posimagen = 0
 
+
+Osoright=[
+            pygame.image.load("sprites/OsoCaminando1.png"),
+            pygame.image.load("sprites/OsoCaminando2.png"),
+            pygame.image.load("sprites/OsoCaminando3.png"),
+            pygame.image.load("sprites/OsoCaminando4.png"),
+            pygame.image.load("sprites/OsoCaminando5.png"),
+            pygame.image.load("sprites/OsoCaminando6.png")]
+
+Osoleft=[
+            pygame.image.load("sprites/OsoCaminando1.2.png"),
+            pygame.image.load("sprites/OsoCaminando2.1.png"),
+            pygame.image.load("sprites/OsoCaminando3.1.png"),
+            pygame.image.load("sprites/OsoCaminando4.1.png"),   
+            pygame.image.load("sprites/OsoCaminando5.1.png"),
+            pygame.image.load("sprites/OsoCaminando6.1.png")]
 
 class Jugador(pygame.sprite.Sprite):
     def __init__(self):
