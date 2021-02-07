@@ -18,6 +18,22 @@ class Jugador(pygame.sprite.Sprite):
         self.CD10 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD10.png")
         self.CD11 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD11.png")
         self.CD12 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD12.png")
+        self.CD13 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD11.png")
+        self.CD14 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD10.png")
+        self.CD15 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD9.png")
+        self.CD16 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD8.png")
+        self.CD17 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD7.png")
+        self.CD18 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD6.png")
+        self.CD19 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD5.png")
+        self.CD20 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD4.png")
+        self.CD21 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD3.png")
+        self.CD22 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD2.png")
+        self.CD23 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD1.png")
+        
+        
+
+
+
         
 
 
@@ -28,7 +44,7 @@ class Jugador(pygame.sprite.Sprite):
         self.Caminando5v2 = pygame.image.load("sprites/OsoCaminando5.1.png")
         self.Caminando6v2 = pygame.image.load("sprites/OsoCaminando6.1.png")
 
-        self.listaSpritesOsoCaminando = [self.CD1,self.CD2,self.CD3,self.CD4,self.CD5,self.CD6,self.CD7,self.CD8,self.CD9,self.CD10,self.CD11,self.CD12]
+        self.listaSpritesOsoCaminando = [self.CD1,self.CD2,self.CD3,self.CD4,self.CD5,self.CD6,self.CD7,self.CD8,self.CD9,self.CD10,self.CD11,self.CD12, self.CD13 , self.CD14 , self.CD15 , self.CD16 , self.CD17 , self.CD18 , self.CD19 , self.CD20 , self.CD21 , self.CD22 , self.CD23]
         self.posimagen = 0
         self.imagenosocaminando = self.listaSpritesOsoCaminando[self.posimagen]
         self.rect = self.imagenosocaminando.get_rect()
@@ -96,4 +112,4 @@ class Jugador(pygame.sprite.Sprite):
              
             if (self.posimagen > len(self.listaSpritesOsoCaminando)-1) or (self.posimagen > len(self.listaSpritesOsoCaminandov2)-1):
                 
-                self.posimagen = 1
+                self.posimagen = 0
