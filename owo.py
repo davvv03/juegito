@@ -1,6 +1,6 @@
 import pygame,sys
 from pygame.locals import*
-from jugador import*
+from prueba import*
 #Estos colores funcionan para dibujar en pantalla simplemente se crean las variables 
 #para usarlos con mayor facilidad 
 
