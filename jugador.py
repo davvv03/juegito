@@ -34,21 +34,17 @@ class Jugador(pygame.sprite.Sprite):
     def oso(self, ventana, posicionix, posicioniy ):
         pygame.event.pump()
         self.key = pygame.key.get_pressed()
-       
-        for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RIGHT:
+        if self.posimagen>= 6:
+            self.posimagen=0
+        if self.key[pygame.K_RIGHT]:
+            self.imagenoso = self.listaSpritesOsoCaminando[self.posimagen]
+            self.posimagen+=1
 
-                 self.imagenoso = self.listaSpritesOsoCaminando[self.posimagen]
-                self.posimagen+=1
-
-            else:
-             if (self.key[pygame.K_LEFT]):
-
-                self.imagenoso = self.listaSpritesOsoCaminandov2[self.posimagen]
-                self.posimagen+=1
-
-             else: self.imagenoso = self.imageninicial
+        else:
+            if (self.key[pygame.K_LEFT]):
+                 self.imagenoso = self.listaSpritesOsoCaminandov2[self.posimagen]
+                 self.posimagen+=1
+            else: self.imagenoso = self.imageninicial
 
 
         ventana.blit(self.imagenoso, (posicionix, posicioniy))
@@ -58,6 +54,8 @@ class Jugador(pygame.sprite.Sprite):
     def cambio(self, tiempo):
 
      if self.tiempocambio == tiempo:
+
+
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.type == pygame.K_RIGHT or pygame.K_LEFT:

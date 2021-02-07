@@ -55,19 +55,18 @@ class Jugador(pygame.sprite.Sprite):
 
     def cambio(self, tiempo):
 
-    
+     
+
      if self.tiempocambio == tiempo:
 
 
       pygame.event.pump()
 
       self.key = pygame.key.get_pressed()
-
+    
       if (self.key[pygame.K_RIGHT] or self.key[pygame.K_LEFT]):
              self.posimagen += 1
              self.tiempocambio += 1
-
-
 
      if (self.posimagen > len(self.listaSpritesOsoCaminando)-1 or self.posimagen > len(self.listaSpritesOsoCaminandov2)-1):
                    self.posimagen = 0

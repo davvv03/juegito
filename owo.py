@@ -124,8 +124,6 @@ def MiJuego():
                 jugadorPosY += 10
 
 
-
-
         pantalla.blit(fondo, (0, 0))
         arbusto1.mostrar(pantalla)
         arbusto1.cambio(tiempo)
