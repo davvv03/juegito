@@ -58,8 +58,7 @@ class Jugador(pygame.sprite.Sprite):
 
         self.posI = 0
 
-        self.listaSpritesOsoCaminandov2 = [self.Caminando1v2, self.Caminando2v2, self.Caminando3v2, self.Caminando4v2,
-                                           self.Caminando5v2, self.Caminando6v2]
+        self.listaSpritesOsoCaminandov2 = [self.CI1,self.CI2,self.CI3,self.CI4,self.CI5,self.CI6,self.CI7,self.CI8,self.CI9,self.CI10,self.CI11,self.CI12]
         self.imagenosocaminandov2 = self.listaSpritesOsoCaminandov2[self.posimagen]
 
         self.imageninicial = self.QUIETA
@@ -76,7 +75,6 @@ class Jugador(pygame.sprite.Sprite):
             if (self.key[pygame.K_LEFT]):
 
                  self.imagenoso = self.listaSpritesOsoCaminandov2[self.posimagen]
-                 
 
             else: self.imagenoso = self.imageninicial
 

@@ -84,7 +84,7 @@ def MiJuego():
 
     while True:
 
-        reloj.tick(30)
+        reloj.tick(45)
 
         repeticion = 100
         repeticion2 = 100
@@ -106,7 +106,7 @@ def MiJuego():
 
         else: 
             if Key[pygame.K_LEFT]:
-                jugadorPosX -= 10
+                jugadorPosX -= 2
          
 
         if not  (IsJump):
