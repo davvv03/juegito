@@ -58,8 +58,6 @@ class Jugador(pygame.sprite.Sprite):
     def cambio(self, tiempo):
 
      if self.tiempocambio == tiempo:
-
-
         for event in pygame.event.get():
             if event.type == pygame.KEYDOWN:
                 if event.type == pygame.K_RIGHT or pygame.K_LEFT:
