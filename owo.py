@@ -61,23 +61,6 @@ class Arbusto(pygame.sprite.Sprite):
             if self.posimagen > len(self.listaimagenes)-1:
                 self.posimagen = 0
 
-#Cargar los Sprites para correr izq y der
-Osoright=[
-            pygame.image.load("sprites/OsoCaminando1.png"),
-            pygame.image.load("sprites/OsoCaminando2.png"),
-            pygame.image.load("sprites/OsoCaminando3.png"),
-            pygame.image.load("sprites/OsoCaminando4.png"),
-            pygame.image.load("sprites/OsoCaminando5.png"),
-            pygame.image.load("sprites/OsoCaminando6.png")]
-
-Osoleft=[
-            pygame.image.load("sprites/OsoCaminando1.2.png"),
-            pygame.image.load("sprites/OsoCaminando2.1.png"),
-            pygame.image.load("sprites/OsoCaminando3.1.png"),
-            pygame.image.load("sprites/OsoCaminando4.1.png"),   
-            pygame.image.load("sprites/OsoCaminando5.1.png"),
-            pygame.image.load("sprites/OsoCaminando6.1.png")]
-
 class Jugador(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
@@ -94,8 +77,8 @@ class Jugador(pygame.sprite.Sprite):
         self.Caminando5v2 = pygame.image.load("sprites/OsoCaminando5.1.png")
         self.Caminando6v2 = pygame.image.load("sprites/OsoCaminando6.1.png")
 
-        self.listaSpritesOsoCaminando = [self.Caminando1, self.Caminando2,
-                                          self.Caminando6]
+        self.listaSpritesOsoCaminando = [self.Caminando1, self.Caminando2, self.Caminando3, self.Caminando4,
+                                           self.Caminando5, self.Caminando6]
         self.posimagen = 0
         self.imagenosocaminando = self.listaSpritesOsoCaminando[self.posimagen]
         self.rect = self.imagenosocaminando.get_rect()
@@ -112,7 +95,7 @@ class Jugador(pygame.sprite.Sprite):
     def oso(self, ventana, posicionix, posicioniy ):
         pygame.event.pump()
         self.key = pygame.key.get_pressed()
-        if self.posimagen>= 3:
+        if self.posimagen>= 6:
             self.posimagen=0
         if self.key[pygame.K_RIGHT]:
             self.imagenoso = self.listaSpritesOsoCaminando[self.posimagen]
@@ -138,12 +121,11 @@ class Jugador(pygame.sprite.Sprite):
      if self.tiempocambio == tiempo:
 
 
-      for event in pygame.event.get():
-        if event.type == pygame.KEYDOWN:
-            pass
-        if event.type == pygame.K_RIGHT or pygame.K_LEFT:
-            self.posimagen += 1
-            self.tiempocambio += 1
+        for event in pygame.event.get():
+            if event.type == pygame.KEYDOWN:
+                if event.type == pygame.K_RIGHT or pygame.K_LEFT:
+                    self.posimagen += 1
+                    self.tiempocambio += 1
 
 
 
@@ -175,7 +157,7 @@ def MiJuego():
 
         pygame.key.set_repeat(repeticion, repeticion2)
 
-        tiempo = int(pygame.time.get_ticks() / 1000)
+        tiempo = int(pygame.time.get_ticks() * 1000)
 
         for event in pygame.event.get():
             if event.type == QUIT:
