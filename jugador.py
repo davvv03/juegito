@@ -3,6 +3,7 @@ import pygame
 class Jugador(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
+        self.imagenoso =pygame.image.load("sprites/OsoCaminando1.png")
         self.Caminando1 = pygame.image.load("sprites/OsoCaminando1.png")
         self.Caminando2 = pygame.image.load("sprites/OsoCaminando2.png")
         self.Caminando3 = pygame.image.load("sprites/OsoCaminando3.png")
