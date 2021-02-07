@@ -56,18 +56,30 @@ class Jugador(pygame.sprite.Sprite):
 
     def cambio(self, tiempo):
 
+
+      repeticion = 100
+      repeticion2 = 100
+
+      pygame.key.set_repeat(repeticion, repeticion2)
      
 
-     #if self.tiempocambio == tiempo:
+      #if self.tiempocambio == tiempo:
 
-
-     pygame.event.pump()
-
-     self.key = pygame.key.get_pressed()
     
-     if (self.key[pygame.K_RIGHT] or self.key[pygame.K_LEFT]):
-             self.posimagen += 1
-             self.tiempocambio += 1
+      for event in pygame.event.get():
+          if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_RIGHT:
 
-     if (self.posimagen > len(self.listaSpritesOsoCaminando)-1 or self.posimagen > len(self.listaSpritesOsoCaminandov2)-1):
-                   self.posimagen = 0
+                self.posimagen += 1
+                self.tiempocambio += 1
+
+            else:  
+                if event.key == pygame.K_LEFT:
+
+                    self.posimagen += 1
+                    self.tiempocambio += 1
+
+             
+            if (self.posimagen > len(self.listaSpritesOsoCaminando)-1) or (self.posimagen > len(self.listaSpritesOsoCaminandov2)-1):
+                
+                self.posimagen = 0
