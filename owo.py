@@ -2,7 +2,7 @@ import pygame,sys
 from pygame.locals import *
 #Estos colores funcionan para dibujar en pantalla simplemente se crean las variables 
 #para usarlos con mayor facilidad 
-#awadeeweconsaborauwu
+
 blanco = (255, 255, 255)
 negro = (0, 0, 0)
 rojo = (255, 0, 0)
