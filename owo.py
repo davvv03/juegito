@@ -15,7 +15,7 @@ morado = (153, 5, 182)
 
 #Se determina el tamaño que va a tomar la pantalla ademas de su tipo esta es su estructura
 #set_mode (tamaño = (0, 0), banderas = 0, profundidad = 0, pantalla = 0, vsync = 0)
-Ancho=1300
+Ancho=1350
 Alto=700
 pantalla = pygame.display.set_mode((Ancho,Alto))
 
@@ -77,6 +77,9 @@ def MiJuego():
     jugador1 = Jugador()
     reloj = pygame.time.Clock()
     posimagen = 0
+    IsJump = False
+    jumpcount = 7
+
 
 
     while True:
@@ -104,6 +107,21 @@ def MiJuego():
         else: 
             if Key[pygame.K_LEFT]:
                 jugadorPosX -= 4
+         
+
+        if not  (IsJump):
+
+            if Key[pygame.K_SPACE]:
+
+                IsJump = True 
+
+        else:
+            if jumpcount >= -7:
+             jugadorPosY -= (jumpcount * abs(jumpcount))*0.5
+             jumpcount -= 1
+            else:
+                jumpcount = 7
+                IsJump = False
 
 
 

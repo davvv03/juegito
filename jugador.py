@@ -5,8 +5,8 @@ class Jugador(pygame.sprite.Sprite):
     #awqa
     def __init__(self):
         super().__init__()
-        self.Caminando1 = pygame.image.load("sprites/OsoCaminando1.png")
-        self.Caminando2 = pygame.image.load("sprites/OsoCaminando2.png")
+        self.Caminando1 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD1.png")
+        self.Caminando2 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD2.png")
         self.Caminando3 = pygame.image.load("sprites/OsoCaminando3.png")
         self.Caminando4 = pygame.image.load("sprites/OsoCaminando4.png")
         self.Caminando5 = pygame.image.load("sprites/OsoCaminando5.png")
