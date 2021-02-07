@@ -1,6 +1,8 @@
 import pygame
 
 class Jugador(pygame.sprite.Sprite):
+
+    #awqa
     def __init__(self):
         super().__init__()
         self.Caminando1 = pygame.image.load("sprites/OsoCaminando1.png")
@@ -34,8 +36,7 @@ class Jugador(pygame.sprite.Sprite):
     def oso(self, ventana, posicionix, posicioniy ):
         pygame.event.pump()
         self.key = pygame.key.get_pressed()
-        if self.posimagen>= 6:
-            self.posimagen=0
+   
         if self.key[pygame.K_RIGHT]:
             self.imagenoso = self.listaSpritesOsoCaminando[self.posimagen]
             
