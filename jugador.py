@@ -1,9 +1,10 @@
 import pygame
 
 class Jugador(pygame.sprite.Sprite):
+
+    #awqa
     def __init__(self):
         super().__init__()
-        self.imagenoso =pygame.image.load("sprites/OsoCaminando1.png")
         self.Caminando1 = pygame.image.load("sprites/OsoCaminando1.png")
         self.Caminando2 = pygame.image.load("sprites/OsoCaminando2.png")
         self.Caminando3 = pygame.image.load("sprites/OsoCaminando3.png")
@@ -35,16 +36,17 @@ class Jugador(pygame.sprite.Sprite):
     def oso(self, ventana, posicionix, posicioniy ):
         pygame.event.pump()
         self.key = pygame.key.get_pressed()
-       
-        for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_RIGHT:
-                 self.imagenoso = self.listaSpritesOsoCaminando[self.posimagen]
-                 self.posimagen+=1
-                else:
-                    if ( event.key == pygame.K_LEFT):
-                        self.imagenoso = self.listaSpritesOsoCaminandov2[self.posimagen]
-                        self.posimagen+=1
+   
+        if self.key[pygame.K_RIGHT]:
+            self.imagenoso = self.listaSpritesOsoCaminando[self.posimagen]
+            
+
+        else:
+            if (self.key[pygame.K_LEFT]):
+
+                 self.imagenoso = self.listaSpritesOsoCaminandov2[self.posimagen]
+                 
+
             else: self.imagenoso = self.imageninicial
 
 
@@ -54,16 +56,18 @@ class Jugador(pygame.sprite.Sprite):
 
     def cambio(self, tiempo):
 
+     
+
      if self.tiempocambio == tiempo:
 
 
-        for event in pygame.event.get():
-            if event.type == pygame.KEYDOWN:
-                if event.type == pygame.K_RIGHT or pygame.K_LEFT:
-                    self.posimagen += 1
-                    self.tiempocambio += 1
+      pygame.event.pump()
 
-
+      self.key = pygame.key.get_pressed()
+    
+      if (self.key[pygame.K_RIGHT] or self.key[pygame.K_LEFT]):
+             self.posimagen += 1
+             self.tiempocambio += 1
 
      if (self.posimagen > len(self.listaSpritesOsoCaminando)-1 or self.posimagen > len(self.listaSpritesOsoCaminandov2)-1):
                    self.posimagen = 0
