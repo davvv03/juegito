@@ -55,8 +55,7 @@ class Jugador(pygame.sprite.Sprite):
 
     def cambio(self, tiempo):
 
-     
-
+    
      if self.tiempocambio == tiempo:
 
 
