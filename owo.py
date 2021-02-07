@@ -61,7 +61,7 @@ class Arbusto(pygame.sprite.Sprite):
             self.tiempocambio += 1
 
             if self.posimagen > len(self.listaimagenes)-1:
-                self.posimagen = 0
+                self.posimagen = 1
 
 
 
@@ -84,7 +84,7 @@ def MiJuego():
 
     while True:
 
-        reloj.tick(30)
+        reloj.tick(45)
 
         repeticion = 100
         repeticion2 = 100
