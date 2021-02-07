@@ -5,6 +5,7 @@ class Jugador(pygame.sprite.Sprite):
     #awqa
     def __init__(self):
         super().__init__()
+        self.QUIETA = pygame.image.load("sprites/SpriteMujer1/Quieta.png")
         self.CD1 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD1.png")
         self.CD2 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD2.png")
         self.CD3 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD3.png")
@@ -17,6 +18,9 @@ class Jugador(pygame.sprite.Sprite):
         self.CD10 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD10.png")
         self.CD11 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD11.png")
         self.CD12 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD12.png")
+        
+
+
         self.Caminando1v2 = pygame.image.load("sprites/OsoCaminando1.2.png")
         self.Caminando2v2 = pygame.image.load("sprites/OsoCaminando2.1.png")
         self.Caminando3v2 = pygame.image.load("sprites/OsoCaminando3.1.png")
@@ -36,7 +40,7 @@ class Jugador(pygame.sprite.Sprite):
                                            self.Caminando5v2, self.Caminando6v2]
         self.imagenosocaminandov2 = self.listaSpritesOsoCaminandov2[self.posimagen]
 
-        self.imageninicial = self.CD1
+        self.imageninicial = self.QUIETA
 
     def oso(self, ventana, posicionix, posicioniy ):
         pygame.event.pump()

@@ -102,11 +102,11 @@ def MiJuego():
         Key = pygame.key.get_pressed()
 
         if Key[pygame.K_RIGHT]:
-            jugadorPosX += 4
+            jugadorPosX += 2
 
         else: 
             if Key[pygame.K_LEFT]:
-                jugadorPosX -= 4
+                jugadorPosX -= 10
          
 
         if not  (IsJump):
