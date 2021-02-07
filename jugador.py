@@ -92,4 +92,4 @@ class Jugador(pygame.sprite.Sprite):
              
             if (self.posimagen > len(self.listaSpritesOsoCaminando)-1) or (self.posimagen > len(self.listaSpritesOsoCaminandov2)-1):
                 
-                self.posimagen = 0
+                self.posimagen = 1

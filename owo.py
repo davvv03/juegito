@@ -84,7 +84,7 @@ def MiJuego():
 
     while True:
 
-        reloj.tick(60)
+        reloj.tick(30)
 
         repeticion = 100
         repeticion2 = 100
