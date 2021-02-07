@@ -39,6 +39,8 @@ class Jugador(pygame.sprite.Sprite):
    
         if self.key[pygame.K_RIGHT]:
             self.imagenoso = self.listaSpritesOsoCaminando[self.posimagen]
+            
+
         else:
             if (self.key[pygame.K_LEFT]):
 
