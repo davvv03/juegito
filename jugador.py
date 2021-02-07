@@ -37,12 +37,18 @@ class Jugador(pygame.sprite.Sprite):
         
 
 
-        self.Caminando1v2 = pygame.image.load("sprites/OsoCaminando1.2.png")
-        self.Caminando2v2 = pygame.image.load("sprites/OsoCaminando2.1.png")
-        self.Caminando3v2 = pygame.image.load("sprites/OsoCaminando3.1.png")
-        self.Caminando4v2 = pygame.image.load("sprites/OsoCaminando4.1.png")
-        self.Caminando5v2 = pygame.image.load("sprites/OsoCaminando5.1.png")
-        self.Caminando6v2 = pygame.image.load("sprites/OsoCaminando6.1.png")
+        self.CI1 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI1.png")
+        self.CI2 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI2.png")
+        self.CI3 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI3.png")
+        self.CI4 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI4.png")
+        self.CI5 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI5.png")
+        self.CI6 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI6.png")
+        self.CI7 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI7.png")
+        self.CI8 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI8.png")
+        self.CI9 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI9.png")
+        self.CI10 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI10.png")
+        self.CI11 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI11.png")
+        self.CI12 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI12.png")
 
         self.listaSpritesOsoCaminando = [self.CD1,self.CD2,self.CD3,self.CD4,self.CD5,self.CD6,self.CD7,self.CD8,self.CD9,self.CD10,self.CD11,self.CD12, self.CD13 , self.CD14 , self.CD15 , self.CD16 , self.CD17 , self.CD18 , self.CD19 , self.CD20 , self.CD21 , self.CD22 , self.CD23]
         self.posimagen = 0
@@ -52,8 +58,7 @@ class Jugador(pygame.sprite.Sprite):
 
         self.posI = 0
 
-        self.listaSpritesOsoCaminandov2 = [self.Caminando1v2, self.Caminando2v2, self.Caminando3v2, self.Caminando4v2,
-                                           self.Caminando5v2, self.Caminando6v2]
+        self.listaSpritesOsoCaminandov2 = [self.CI1,self.CI2,self.CI3,self.CI4,self.CI5,self.CI6,self.CI7,self.CI8,self.CI9,self.CI10,self.CI11,self.CI12]
         self.imagenosocaminandov2 = self.listaSpritesOsoCaminandov2[self.posimagen]
 
         self.imageninicial = self.QUIETA
@@ -70,7 +75,6 @@ class Jugador(pygame.sprite.Sprite):
             if (self.key[pygame.K_LEFT]):
 
                  self.imagenoso = self.listaSpritesOsoCaminandov2[self.posimagen]
-                 
 
             else: self.imagenoso = self.imageninicial
 

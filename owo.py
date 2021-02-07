@@ -106,7 +106,7 @@ def MiJuego():
 
         else: 
             if Key[pygame.K_LEFT]:
-                jugadorPosX -= 10
+                jugadorPosX -= 2
          
 
         if not  (IsJump):
