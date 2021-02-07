@@ -39,8 +39,6 @@ class Jugador(pygame.sprite.Sprite):
    
         if self.key[pygame.K_RIGHT]:
             self.imagenoso = self.listaSpritesOsoCaminando[self.posimagen]
-            
-
         else:
             if (self.key[pygame.K_LEFT]):
 
@@ -58,14 +56,14 @@ class Jugador(pygame.sprite.Sprite):
 
      
 
-     if self.tiempocambio == tiempo:
+     #if self.tiempocambio == tiempo:
 
 
-      pygame.event.pump()
+     pygame.event.pump()
 
-      self.key = pygame.key.get_pressed()
+     self.key = pygame.key.get_pressed()
     
-      if (self.key[pygame.K_RIGHT] or self.key[pygame.K_LEFT]):
+     if (self.key[pygame.K_RIGHT] or self.key[pygame.K_LEFT]):
              self.posimagen += 1
              self.tiempocambio += 1
 
