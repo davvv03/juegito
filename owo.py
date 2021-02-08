@@ -110,12 +110,11 @@ def MiJuego():
         pygame.event.pump()
         Key = pygame.key.get_pressed()
 
-        if Key[pygame.K_RIGHT]:
+        if Key[pygame.K_RIGHT] and not Key[pygame.K_LEFT]:
             jugadorPosX += desp
 
-        else: 
-            if Key[pygame.K_LEFT]:
-                jugadorPosX -= desp
+        if Key[pygame.K_LEFT] and not Key[pygame.K_RIGHT]:
+            jugadorPosX -= desp
          
 
         if not  (IsJump):
