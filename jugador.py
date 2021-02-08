@@ -53,14 +53,14 @@ class Jugador(pygame.sprite.Sprite):
 
 
         self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD1.png")
-        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD2.png")
-        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD3.png")
-        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD4.png")
-        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD5.png")
-        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD6.png")
-        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD7.png")
-        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD8.png")
-        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD9.png")
+        self.SD2=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD2.png")
+        self.SD3=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD3.png")
+        self.SD4=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD4.png")
+        self.SD5=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD5.png")
+        self.SD6=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD6.png")
+        self.SD7=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD7.png")
+        self.SD8=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD8.png")
+        self.SD9=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD9.png")
 
         self.listaSpritesOsoCaminando = [self.CD1,self.CD2,self.CD3,self.CD4,self.CD5,self.CD6,self.CD7,self.CD8,self.CD9,self.CD10,self.CD11,self.CD12]
         self.posimagen = 0

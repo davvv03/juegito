@@ -72,7 +72,7 @@ def MiJuego():
     pygame.init()
 
     jugadorPosX = 0
-    jugadorPosY = 384
+    jugadorPosY = 405
     arbusto1 = Arbusto()
     jugador1 = Jugador()
     reloj = pygame.time.Clock()
