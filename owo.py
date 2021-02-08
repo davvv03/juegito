@@ -111,7 +111,7 @@ def MiJuego():
         pygame.event.pump()
         Key = pygame.key.get_pressed()
 
-        if Key[pygame.K_RIGHT]:
+        if Key[pygame.K_RIGHT] and not Key[pygame.K_LEFT]:
             jugadorPosX += desp
 
         else: 

@@ -85,24 +85,16 @@ class Jugador(pygame.sprite.Sprite):
         pygame.event.pump()
         self.key = pygame.key.get_pressed()
    
-        if self.key[pygame.K_RIGHT]:
+        if self.key[pygame.K_RIGHT] and not(self.key[pygame.K_LEFT]):
             self.imagenoso = self.listaSpritesOsoCaminando[self.posimagen]
-            
-
-        else:
-            if (self.key[pygame.K_LEFT]):
-
-                 self.imagenoso = self.listaSpritesOsoCaminandov2[self.posimagen]
-            else:
-                if(self.key[pygame.K_SPACE]):
-                    
-                    self.imagenoso = self.SD1
-
-                    if self.jugadorPosY != 385:
-                        self.imagenoso = self.SD2
-                        
- 
-                else: self.imagenoso = self.imageninicial
+        if (self.key[pygame.K_LEFT])and not self.key[pygame.K_RIGHT]:
+            self.imagenoso = self.listaSpritesOsoCaminandov2[self.posimagen]
+        if(self.key[pygame.K_SPACE]):
+            self.imagenoso = self.SD1
+            if self.jugadorPosY != 385:
+                self.imagenoso = self.SD2
+        if not(self.key[pygame.K_RIGHT]) and not self.key[pygame.K_LEFT] and not self.key[pygame.K_SPACE]:
+            self.imagenoso = self.imageninicial
 
 
         ventana.blit(self.imagenoso, (posicionix, posicioniy))
@@ -128,21 +120,15 @@ class Jugador(pygame.sprite.Sprite):
             exit()
 
           if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RIGHT:
+            if event.key == pygame.K_RIGHT and event.key != pygame.K_LEFT:
 
                 self.posimagen += 1
                 self.tiempocambio += 1
 
-            else:  
-                if event.key == pygame.K_LEFT:
-
+            if event.key == pygame.K_LEFT and event.key != pygame.K_RIGHT:
                     self.posimagen += 1
                     self.tiempocambio += 1
-
-
-                else: 
-                    if event.key == pygame.K_SPACE:
-
+            if event.key == pygame.K_SPACE:
                      self.posimagen += 1
                      self.tiempocambio += 1
 
