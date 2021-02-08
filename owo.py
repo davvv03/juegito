@@ -135,7 +135,7 @@ def MiJuego():
         
             jugador1.velocidady = -1
            
-            heroe.velocidady = 0
+            jugador1.velocidady = 0
          
 
         if not  (IsJump):
