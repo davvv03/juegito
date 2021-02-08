@@ -78,7 +78,7 @@ def MiJuego():
     reloj = pygame.time.Clock()
     posimagen = 0
     IsJump = False
-    jumpcount = 7
+    jumpcount = 10                                        
 
 
 
@@ -116,11 +116,11 @@ def MiJuego():
                 IsJump = True 
 
         else:
-            if jumpcount >= -7:
+            if jumpcount >= -10:
              jugadorPosY -= (jumpcount * abs(jumpcount))*0.5
              jumpcount -= 1
             else:
-                jumpcount = 7
+                jumpcount = 10
                 IsJump = False
 
 

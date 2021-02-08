@@ -72,7 +72,7 @@ class Jugador(pygame.sprite.Sprite):
 
         self.listaSpritesOsoCaminandov2 = [self.CI1,self.CI2,self.CI3,self.CI4,self.CI5,self.CI6,self.CI7,self.CI8,self.CI9,self.CI10,self.CI11,self.CI12]
         self.imagenosocaminandov2 = self.listaSpritesOsoCaminandov2[self.posimagen]
-        self.listaSpritesOsoSaltando=[self.SD1,self.SD2,self.SD3,self.SD4,self.SD5,self.SD6,self.SD7,self.SD8,self.SD9]
+        self.listaSpritesOsoSaltando=[self.SD2]
         self.imageninicial = self.QUIETA
 
     def oso(self, ventana, posicionix, posicioniy ):
@@ -89,7 +89,7 @@ class Jugador(pygame.sprite.Sprite):
                  self.imagenoso = self.listaSpritesOsoCaminandov2[self.posimagen]
             else:
                 if(self.key[pygame.K_SPACE]):
-                    self.imagenoso=self.listaSpritesOsoSaltando[self.posimagen]
+                    self.imagenoso=self.SD2
 
                 else: self.imagenoso = self.imageninicial
 
@@ -127,6 +127,15 @@ class Jugador(pygame.sprite.Sprite):
 
                     self.posimagen += 1
                     self.tiempocambio += 1
+
+
+                else: 
+                    if event.key == pygame.K_SPACE:
+
+                     self.posimagen += 1
+                     self.tiempocambio += 1
+
+
 
              
             if (self.posimagen > len(self.listaSpritesOsoCaminando)-1) or (self.posimagen > len(self.listaSpritesOsoCaminandov2)-1):
