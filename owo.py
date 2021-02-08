@@ -78,7 +78,8 @@ def MiJuego():
     reloj = pygame.time.Clock()
     posimagen = 0
     IsJump = False
-    jumpcount = 10                                        
+    jumpcount = 10    
+    desp = 2                                    
 
 
 
@@ -102,11 +103,11 @@ def MiJuego():
         Key = pygame.key.get_pressed()
 
         if Key[pygame.K_RIGHT]:
-            jugadorPosX += 2
+            jugadorPosX += desp
 
         else: 
             if Key[pygame.K_LEFT]:
-                jugadorPosX -= 2
+                jugadorPosX -= desp
          
 
         if not  (IsJump):
@@ -114,6 +115,7 @@ def MiJuego():
             if Key[pygame.K_SPACE]:
 
                 IsJump = True 
+                desp = 7
 
         else:
             if jumpcount >= -10:
@@ -122,6 +124,7 @@ def MiJuego():
             else:
                 jumpcount = 10
                 IsJump = False
+                desp = 2
 
 
 
