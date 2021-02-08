@@ -50,6 +50,18 @@ class Jugador(pygame.sprite.Sprite):
         self.CI11 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI11.png")
         self.CI12 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI12.png")
 
+
+
+        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD1.png")
+        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD2.png")
+        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD3.png")
+        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD4.png")
+        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD5.png")
+        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD6.png")
+        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD7.png")
+        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD8.png")
+        self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD9.png")
+
         self.listaSpritesOsoCaminando = [self.CD1,self.CD2,self.CD3,self.CD4,self.CD5,self.CD6,self.CD7,self.CD8,self.CD9,self.CD10,self.CD11,self.CD12]
         self.posimagen = 0
         self.imagenosocaminando = self.listaSpritesOsoCaminando[self.posimagen]
@@ -60,7 +72,7 @@ class Jugador(pygame.sprite.Sprite):
 
         self.listaSpritesOsoCaminandov2 = [self.CI1,self.CI2,self.CI3,self.CI4,self.CI5,self.CI6,self.CI7,self.CI8,self.CI9,self.CI10,self.CI11,self.CI12]
         self.imagenosocaminandov2 = self.listaSpritesOsoCaminandov2[self.posimagen]
-
+        self.listaSpritesOsoSaltando=[self.SD1,self.SD2,self.SD3,self.SD4,self.SD5,self.SD6,self.SD7,self.SD8,self.SD9]
         self.imageninicial = self.QUIETA
 
     def oso(self, ventana, posicionix, posicioniy ):
@@ -75,8 +87,11 @@ class Jugador(pygame.sprite.Sprite):
             if (self.key[pygame.K_LEFT]):
 
                  self.imagenoso = self.listaSpritesOsoCaminandov2[self.posimagen]
+            else:
+                if(self.key[pygame.K_SPACE]):
+                    self.imagenoso=self.listaSpritesOsoSaltando[self.posimagen]
 
-            else: self.imagenoso = self.imageninicial
+                else: self.imagenoso = self.imageninicial
 
 
         ventana.blit(self.imagenoso, (posicionix, posicioniy))
