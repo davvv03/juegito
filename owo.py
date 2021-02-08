@@ -143,7 +143,7 @@ def MiJuego():
         y = fuente1.render(altura , 0 , (blanco))
         pantalla.blit(contador , (0 , 0))
       
-        pantalla.blit(y , (30 , 0))
+        pantalla.blit(y , (35 , 0))
           
 
         pygame.display.update()
