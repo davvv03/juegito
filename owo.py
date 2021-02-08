@@ -13,6 +13,8 @@ amarillo = (255, 255, 0)
 morado = (153, 5, 182)
 
 
+
+
 #Se determina el tamaño que va a tomar la pantalla ademas de su tipo esta es su estructura
 #set_mode (tamaño = (0, 0), banderas = 0, profundidad = 0, pantalla = 0, vsync = 0)
 Ancho=1350
@@ -72,14 +74,16 @@ def MiJuego():
     pygame.init()
 
     jugadorPosX = 0
-    jugadorPosY = 405
+    jugadorPosY = 385
     arbusto1 = Arbusto()
     jugador1 = Jugador()
     reloj = pygame.time.Clock()
     posimagen = 0
     IsJump = False
     jumpcount = 10    
-    desp = 2                                    
+    desp = 2        
+    fuente1 = pygame.font.SysFont("Arial" , 20 )    
+    aux = 1    
 
 
 
@@ -92,7 +96,7 @@ def MiJuego():
 
         pygame.key.set_repeat(repeticion, repeticion2)
 
-        tiempo = int(pygame.time.get_ticks() * 1000)
+        tiempo = int(pygame.time.get_ticks() / 1000)
 
         for event in pygame.event.get():
             if event.type == QUIT:
@@ -133,6 +137,15 @@ def MiJuego():
         arbusto1.cambio(tiempo)
         jugador1.oso(pantalla , jugadorPosX , jugadorPosY)
         jugador1.cambio(tiempo)
+        segundos = str(tiempo)
+        altura = str(jugadorPosY)
+        contador = fuente1.render(segundos  , 0 , (blanco))
+        y = fuente1.render(altura , 0 , (blanco))
+        pantalla.blit(contador , (0 , 0))
+      
+        pantalla.blit(y , (30 , 0))
+          
+
         pygame.display.update()
 
 MiJuego()
