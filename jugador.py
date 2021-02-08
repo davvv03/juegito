@@ -1,10 +1,12 @@
 import pygame
 
+
 class Jugador(pygame.sprite.Sprite):
 
     #awqa
-    def __init__(self):
-        super().__init__()
+    def __init__(self , jugadorPosY):
+        super().__init__() 
+        self.jugadorPosY = jugadorPosY
         self.QUIETA = pygame.image.load("sprites/SpriteMujer1/Quieta.png")
         self.CD1 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD1.png")
         self.CD2 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD2.png")
@@ -89,8 +91,13 @@ class Jugador(pygame.sprite.Sprite):
                  self.imagenoso = self.listaSpritesOsoCaminandov2[self.posimagen]
             else:
                 if(self.key[pygame.K_SPACE]):
-                    self.imagenoso=self.SD2
+                    
+                    self.imagenoso = self.SD1
 
+                    if self.jugadorPosY != 385:
+                        self.imagenoso = self.SD2
+                        
+ 
                 else: self.imagenoso = self.imageninicial
 
 

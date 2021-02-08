@@ -12,6 +12,8 @@ verde = (0, 255, 0)
 amarillo = (255, 255, 0)
 morado = (153, 5, 182)
 
+ 
+
 
 
 
@@ -76,14 +78,16 @@ def MiJuego():
     jugadorPosX = 0
     jugadorPosY = 385
     arbusto1 = Arbusto()
-    jugador1 = Jugador()
+    jugador1 = Jugador(jugadorPosY  )
     reloj = pygame.time.Clock()
     posimagen = 0
-    IsJump = False
-    jumpcount = 10    
+    
+    jumpcount = 10 
     desp = 2        
     fuente1 = pygame.font.SysFont("Arial" , 20 )    
-    aux = 1    
+    aux = 1  
+    global IsJump 
+    IsJump = False
 
 
 
@@ -123,7 +127,7 @@ def MiJuego():
 
         else:
             if jumpcount >= -10:
-             jugadorPosY -= (jumpcount * abs(jumpcount))*0.5
+             jugadorPosY -= ((jumpcount * abs(jumpcount))*0.5)/2
              jumpcount -= 1
             else:
                 jumpcount = 10
@@ -143,7 +147,7 @@ def MiJuego():
         y = fuente1.render(altura , 0 , (blanco))
         pantalla.blit(contador , (0 , 0))
       
-        pantalla.blit(y , (35 , 0))
+        pantalla.blit(y , (35  , 0))
           
 
         pygame.display.update()
