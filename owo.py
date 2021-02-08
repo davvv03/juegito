@@ -81,6 +81,7 @@ def MiJuego():
     jugador1 = Jugador(jugadorPosY  )
     reloj = pygame.time.Clock()
     posimagen = 0
+    gravedad = 8
     
     jumpcount = 10 
     desp = 2        
@@ -116,6 +117,25 @@ def MiJuego():
         else: 
             if Key[pygame.K_LEFT]:
                 jugadorPosX -= desp
+
+
+        if jugador1.statey == "falling":
+
+            jugador1.velocidady = jugador1.fallingTimer*gravedad
+            jugador1.fallingTimer += 0.15
+
+        elif jugador1.statey == "jumping":
+
+            jugador1.velocidady = (jugador1.jump_timer / 15.0) * -gravedad
+            jugador1.jumptimer -= 1
+
+        elif jugador1.statey == "standing":
+
+            jugador1.velocidad_y = 1
+        
+            jugador1.velocidady = -1
+           
+            heroe.velocidady = 0
          
 
         if not  (IsJump):
@@ -127,7 +147,7 @@ def MiJuego():
 
         else:
             if jumpcount >= -10:
-             jugadorPosY -= ((jumpcount * abs(jumpcount))*0.5)/2
+             jugadorPosY -= ((jumpcount * abs(jumpcount))*0.5)
              jumpcount -= 1
             else:
                 jumpcount = 10

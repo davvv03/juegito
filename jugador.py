@@ -7,6 +7,10 @@ class Jugador(pygame.sprite.Sprite):
     def __init__(self , jugadorPosY):
         super().__init__() 
         self.jugadorPosY = jugadorPosY
+        self.statey = "falling"
+        self.jumptimer = 0
+        self.fallingTimer = 0
+        self.velocidady = 0
         self.QUIETA = pygame.image.load("sprites/SpriteMujer1/Quieta.png")
         self.CD1 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD1.png")
         self.CD2 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD2.png")
