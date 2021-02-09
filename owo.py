@@ -113,11 +113,11 @@ def MiJuego():
         Key = pygame.key.get_pressed()
 
         if Key[pygame.K_RIGHT] and not Key[pygame.K_LEFT]:
-            jugadorPosX= jugador1.movX()
+            jugadorPosX= jugador1.movX('D')
 
         else: 
             if Key[pygame.K_LEFT]:
-                jugadorPosX -= desp
+                jugadorPosX = jugador1.movX('I')
 
 
         if jugador1.statey == "falling":

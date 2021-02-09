@@ -131,7 +131,10 @@ class Jugador(pygame.sprite.Sprite):
             if (self.posimagen > len(self.listaSpritesOsoCaminando)-1) or (self.posimagen > len(self.listaSpritesOsoCaminandov2)-1):
                 
                 self.posimagen = 1
-
-    def movX(self):
+    def movX(self,direccion):
+       if direccion=='D': 
         self.jugadorPosX = self.jugadorPosX + 2
         return self.jugadorPosX
+       elif direccion=='I':
+            self.jugadorPosX = self.jugadorPosX - 2
+            return self.jugadorPosX
