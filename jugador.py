@@ -132,8 +132,6 @@ class Jugador(pygame.sprite.Sprite):
                 
                 self.posimagen = 1
 
-
-
     def movX(self):
         self.jugadorPosX = self.jugadorPosX + 2
         return self.jugadorPosX
