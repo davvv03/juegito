@@ -12,6 +12,7 @@ class Jugador(pygame.sprite.Sprite):
         self.fallingTimer = 0
         self.velocidady = 0
         self.QUIETA = pygame.image.load("sprites/SpriteMujer1/Quieta.png")
+
         self.CD1 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD1.png")
         self.CD2 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD2.png")
         self.CD3 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD3.png")
@@ -50,8 +51,6 @@ class Jugador(pygame.sprite.Sprite):
         self.CI10 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI10.png")
         self.CI11 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI11.png")
         self.CI12 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI12.png")
-
-
 
         self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD1.png")
         self.SD2=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD2.png")
