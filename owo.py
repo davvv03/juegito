@@ -1,5 +1,6 @@
-import pygame,sys
+import pygame,sys,itertools,os
 from pygame.locals import*
+from pygame.time import Clock
 from jugador import*
 #Estos colores funcionan para dibujar en pantalla simplemente se crean las variables 
 #para usarlos con mayor facilidad 
@@ -32,8 +33,8 @@ pygame.display.set_caption("ULTRA OWO")
 
 #Se carga la imagen fondo y luego con .blit se establece la coordenada en la que se va a dibujar
 #estructura: blit (fuente, destino, área = Ninguno, banderas_especiales = 0)
-fondo = Fondo()
-pantalla.blit(fondo.F1, (0,0))
+#fondo = Fondo()
+#pantalla.blit(fondo.F1, (0,0))
 
 
 #Se crea la clase arbusto y hereda de Sprite para que pueda usar los metodos incluidos en dicha clase
@@ -91,12 +92,14 @@ def MiJuego():
     IsJump = False
     jugador1 = Jugador(jugadorPosY , desp  , jugadorPosX)
 
-
+    images=cargargif(path='imagenes/fondo/')
+    fondo1=Fondo((0,0),images,0.03)
+    todofondo=pygame.sprite.Group(fondo1)
 
     while True:
+        #pygame.time.set_timer(pygame.USEREVENT + 1, 100)
 
-        reloj.tick(45)
-
+        dt=reloj.tick(45)/1000
         repeticion = 100
         repeticion2 = 100
 
@@ -108,7 +111,9 @@ def MiJuego():
             if event.type == QUIT:
                 pygame.quit()
                 sys.exit()
-
+            '''if event.type== USEREVENT + 1:
+                fondo.update(pantalla)'''
+        todofondo.update(dt)
         pygame.event.pump()
         Key = pygame.key.get_pressed()
 
@@ -155,9 +160,10 @@ def MiJuego():
                 IsJump = False
                 desp = 2'''
 
-
-        fondo.update(pantalla)
+        
         #pantalla.blit(fondo.F2, (0, 0))
+        #fondo.update(pantalla)
+        todofondo.draw(pantalla)
         arbusto1.mostrar(pantalla)
         arbusto1.cambio(tiempo)
         jugador1.oso(pantalla , jugadorPosX , jugadorPosY)
@@ -169,8 +175,6 @@ def MiJuego():
         pantalla.blit(contador , (0 , 0))
       
         pantalla.blit(y , (35  , 0))
-          
-
         pygame.display.update()
 
 MiJuego()
