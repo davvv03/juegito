@@ -157,6 +157,7 @@ class Fondo(pygame.sprite.Sprite):
         self.actual=self.F1
     def update(self,pantalla):
         self.actual=self.Listafondo[self.pos]
+        pygame.time.delay(90)
         pantalla.blit(self.actual,(0,0))
         if self.pos<7:
             self.pos+=1
