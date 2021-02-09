@@ -78,7 +78,7 @@ def MiJuego():
     jugadorPosX = 0
     jugadorPosY = 385
     arbusto1 = Arbusto()
-    jugador1 = Jugador(jugadorPosY  )
+
     reloj = pygame.time.Clock()
     posimagen = 0
     gravedad = 8
@@ -89,6 +89,7 @@ def MiJuego():
     aux = 1  
     global IsJump 
     IsJump = False
+    jugador1 = Jugador(jugadorPosY , desp  , jugadorPosX)
 
 
 
@@ -112,7 +113,8 @@ def MiJuego():
         Key = pygame.key.get_pressed()
 
         if Key[pygame.K_RIGHT] and not Key[pygame.K_LEFT]:
-            jugadorPosX += desp
+           
+            jugador1.movX()
 
         else: 
             if Key[pygame.K_LEFT]:

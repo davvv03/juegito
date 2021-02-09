@@ -4,9 +4,11 @@ import pygame
 class Jugador(pygame.sprite.Sprite):
 
     #awqa
-    def __init__(self , jugadorPosY):
+    def __init__(self , jugadorPosY , desp , jugadorPosX):
         super().__init__() 
         self.jugadorPosY = jugadorPosY
+        self.desp = desp
+        self.jugadorPosX = jugadorPosX
         self.statey = "falling"
         self.jumptimer = 0
         self.fallingTimer = 0
@@ -132,7 +134,6 @@ class Jugador(pygame.sprite.Sprite):
 
 
 
-    def movX(self , jugadorPosX):
+    def movX(self):
 
-        if  Key[pygame.K_RIGHT] and not Key[pygame.K_LEFT]:
-            jugadorPosX += desp
+        self.jugadorPosX = self.jugadorPosX + 2
