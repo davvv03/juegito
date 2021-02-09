@@ -81,8 +81,8 @@ def MiJuego():
 
     reloj = pygame.time.Clock()
     posimagen = 0
-    gravedad = 8
-    
+    gravedad = 20
+    col=False
     jumpcount = 10 
     desp = 2        
     fuente1 = pygame.font.SysFont("Arial" , 20 )    
@@ -90,6 +90,7 @@ def MiJuego():
     global IsJump 
     IsJump = False
     jugador1 = Jugador(jugadorPosY , desp  , jugadorPosX)
+    pisoo=piso(0,659,Ancho,32,azul)
 
 
 
@@ -100,7 +101,7 @@ def MiJuego():
 
         repeticion = 100
         repeticion2 = 100
-
+        
         pygame.key.set_repeat(repeticion, repeticion2)
 
         tiempo = int(pygame.time.get_ticks() / 1000)
@@ -122,32 +123,42 @@ def MiJuego():
             if Key[pygame.K_LEFT]:
                 jugadorPosX = jugador1.movX('I')
 
+        if col==True:
+            jugador1.statey='standing'
+        elif jugador1.statey == "falling":
 
-        if jugador1.statey == "falling":
-
-            jugador1.velocidady = jugador1.fallingTimer*gravedad
+            jugadorPosY = jugador1.rect.top= jugador1.fallingTimer*gravedad
+            jugador1.rect.bottom=jugador1.rect.top+132
             jugador1.fallingTimer += 0.15
 
         elif jugador1.statey == "jumping":
 
-            jugador1.velocidady = (jugador1.jump_timer / 15.0) * -gravedad
+            jugadorPosY = (jugador1.jump_timer / 15.0) * -gravedad
             jugador1.jumptimer -= 1
 
         elif jugador1.statey == "standing":
 
-            jugador1.velocidad_y = 1
+            jugador1.velocidad_y = 0
         
-            jugador1.velocidady = -1
+            jugador1.velocidady = 0
            
             jugador1.velocidady = 0
          
-
-        if not  (IsJump):
-
-            if Key[pygame.K_SPACE]:
+        if Key[pygame.K_SPACE]:     
+            if jugador1.statey=='standing':
+                jugador1.statey='jumping'    
+            elif jugador1.statey=='jumping':
+                jugador1.statey='falling'
+        if jugador1.jumptimer<=0:
+            jugador1.statey='falling'        
                 
-                IsJump = True 
-                desp = 7
+        if jugador1.colision(pisoo):
+            col=True
+            if jugador1.statey == 'falling':
+                jugador1.rect.bottom = pisoo.rect.top
+            elif jugador1.statey == 'jumping':
+                jugador1.rect.top = pisoo.rect.bottom
+
 
         '''else:
             if jumpcount >= -10:
@@ -160,9 +171,11 @@ def MiJuego():
 
         
         #pantalla.blit(fondo.F2, (0, 0))
+        pisoo.update(pantalla)
         fondo.update(pantalla)
         arbusto1.mostrar(pantalla)
         arbusto1.cambio(tiempo)
+        
         jugador1.oso(pantalla , jugadorPosX , jugadorPosY)
         jugador1.cambio(tiempo)
         segundos = str(tiempo)
@@ -170,8 +183,10 @@ def MiJuego():
         contador = fuente1.render(segundos  , 0 , (blanco))
         y = fuente1.render(altura , 0 , (blanco))
         pantalla.blit(contador , (0 , 0))
-      
+        pantalla.set_colorkey([0, 255, 0])
+        pantalla.convert_alpha()
         pantalla.blit(y , (35  , 0))
         pygame.display.update()
-
+        '''print(jugador1.rect.top,",",jugador1.rect.bottom)
+        print(jugador1.statey)'''
 MiJuego()
