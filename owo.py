@@ -146,14 +146,14 @@ def MiJuego():
                 IsJump = True 
                 desp = 7
 
-        else:
+        '''else:
             if jumpcount >= -10:
              jugadorPosY -= ((jumpcount * abs(jumpcount))*0.5)
              jumpcount -= 1
             else:
                 jumpcount = 10
                 IsJump = False
-                desp = 2
+                desp = 2'''
 
 
 
