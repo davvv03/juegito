@@ -38,11 +38,6 @@ class Jugador(pygame.sprite.Sprite):
         
         
 
-
-
-        
-
-
         self.CI1 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI1.png")
         self.CI2 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI2.png")
         self.CI3 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI3.png")
@@ -109,11 +104,8 @@ class Jugador(pygame.sprite.Sprite):
 
       pygame.key.set_repeat(repeticion, repeticion2)
      
-
       #if self.tiempocambio == tiempo:
 
-     
-    
       for event in pygame.event.get():
           if event.type == pygame.QUIT:
             
@@ -138,3 +130,10 @@ class Jugador(pygame.sprite.Sprite):
             if (self.posimagen > len(self.listaSpritesOsoCaminando)-1) or (self.posimagen > len(self.listaSpritesOsoCaminandov2)-1):
                 
                 self.posimagen = 1
+
+
+
+    def movX(self , jugadorPosX):
+
+        if  Key[pygame.K_RIGHT] and not Key[pygame.K_LEFT]:
+            jugadorPosX += desp
