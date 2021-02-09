@@ -12,6 +12,7 @@ class Jugador(pygame.sprite.Sprite):
         self.fallingTimer = 0
         self.velocidady = 0
         self.QUIETA = pygame.image.load("sprites/SpriteMujer1/Quieta.png")
+
         self.CD1 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD1.png")
         self.CD2 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD2.png")
         self.CD3 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD3.png")
@@ -24,24 +25,6 @@ class Jugador(pygame.sprite.Sprite):
         self.CD10 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD10.png")
         self.CD11 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD11.png")
         self.CD12 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD12.png")
-        self.CD13 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD11.png")
-        self.CD14 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD10.png")
-        self.CD15 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD9.png")
-        self.CD16 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD8.png")
-        self.CD17 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD7.png")
-        self.CD18 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD6.png")
-        self.CD19 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD5.png")
-        self.CD20 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD4.png")
-        self.CD21 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD3.png")
-        self.CD22 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD2.png")
-        self.CD23 = pygame.image.load("sprites/SpriteMujer1/CaminandoDerecha/CD1.png")
-        
-        
-
-
-
-        
-
 
         self.CI1 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI1.png")
         self.CI2 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI2.png")
@@ -55,8 +38,6 @@ class Jugador(pygame.sprite.Sprite):
         self.CI10 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI10.png")
         self.CI11 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI11.png")
         self.CI12 = pygame.image.load("sprites/SpriteMujer1/CaminandoIzquierda/CI12.png")
-
-
 
         self.SD1=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD1.png")
         self.SD2=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD2.png")
