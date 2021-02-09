@@ -32,8 +32,8 @@ pygame.display.set_caption("ULTRA OWO")
 
 #Se carga la imagen fondo y luego con .blit se establece la coordenada en la que se va a dibujar
 #estructura: blit (fuente, destino, área = Ninguno, banderas_especiales = 0)
-fondo = pygame.image.load("imagenes/FondoFinal2.png")
-pantalla.blit(fondo, (0,0))
+fondo = Fondo()
+pantalla.blit(fondo.F1, (0,0))
 
 
 #Se crea la clase arbusto y hereda de Sprite para que pueda usar los metodos incluidos en dicha clase
@@ -74,9 +74,9 @@ class Arbusto(pygame.sprite.Sprite):
 def MiJuego():
     #Inicializacion de Pygame
     pygame.init()
-
+    x=0
     jugadorPosX = 0
-    jugadorPosY = 385
+    jugadorPosY = 528
     arbusto1 = Arbusto()
 
     reloj = pygame.time.Clock()
@@ -142,7 +142,7 @@ def MiJuego():
         if not  (IsJump):
 
             if Key[pygame.K_SPACE]:
-
+                
                 IsJump = True 
                 desp = 7
 
@@ -156,8 +156,8 @@ def MiJuego():
                 desp = 2'''
 
 
-
-        pantalla.blit(fondo, (0, 0))
+        fondo.update(pantalla)
+        #pantalla.blit(fondo.F2, (0, 0))
         arbusto1.mostrar(pantalla)
         arbusto1.cambio(tiempo)
         jugador1.oso(pantalla , jugadorPosX , jugadorPosY)
