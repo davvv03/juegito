@@ -113,8 +113,7 @@ def MiJuego():
         Key = pygame.key.get_pressed()
 
         if Key[pygame.K_RIGHT] and not Key[pygame.K_LEFT]:
-           
-            jugador1.movX()
+            jugadorPosX= jugador1.movX()
 
         else: 
             if Key[pygame.K_LEFT]:

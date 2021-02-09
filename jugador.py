@@ -135,5 +135,5 @@ class Jugador(pygame.sprite.Sprite):
 
 
     def movX(self):
-
         self.jugadorPosX = self.jugadorPosX + 2
+        return self.jugadorPosX
