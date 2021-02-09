@@ -92,7 +92,7 @@ def MiJuego():
     IsJump = False
     jugador1 = Jugador(jugadorPosY , desp  , jugadorPosX)
 
-    images=cargargif(path='imagenes/fondo/')
+    images=cargargif(path='imagenes\ondo')
     fondo1=Fondo((0,0),images,0.03)
     todofondo=pygame.sprite.Group(fondo1)
 
