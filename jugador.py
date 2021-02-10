@@ -63,7 +63,7 @@ class Jugador(pygame.sprite.Sprite):
         self.SD7=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD7.png")
         self.SD8=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD8.png")
         self.SD9=pygame.image.load("sprites/SpriteMujer1/SaltandoDerecha/SD9.png")
-
+        self.rect = self.QUIETA.get_rect()
         self.listaSpritesOsoCaminando = [self.CD1,self.CD2,self.CD3,self.CD4,self.CD5,self.CD6,self.CD7,self.CD8,self.CD9,self.CD10,self.CD11,self.CD12]
         self.posimagen = 0
         self.imagenosocaminando = self.listaSpritesOsoCaminando[self.posimagen]
@@ -134,8 +134,22 @@ class Jugador(pygame.sprite.Sprite):
        elif direccion=='I':
             self.jugadorPosX = self.jugadorPosX - 2
             return self.jugadorPosX
+    def colision(self, other):
+        return self.rect.colliderect(other)
 
 
 
 
 
+class piso(pygame.sprite.Sprite):
+    def __init__(self, x, y, largo, alto, color):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = pygame.Surface((largo, alto))
+        self.rect = self.image.get_rect()
+        self.rect.top=y
+        self.rect.bottom=y+alto
+        self.rect.right=largo
+        self.rect.left=x
+    def update(self,ventana):
+        ventana.blit(self.image, self.rect)
+ 
