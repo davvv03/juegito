@@ -122,20 +122,36 @@ def MiJuego():
             if Key[pygame.K_LEFT]:
                 jugadorPosX = jugador1.movX('I')
 
+<<<<<<< Updated upstream
         
         if jugador1.statey == "falling":
             
             jugadorPosY += jugador1.fallingTimer*gravedad
             jugador1.rect.top=jugadorPosY
+=======
+        if col==True and not Key[pygame.K_SPACE]:
+            jugador1.statey='standing'
+            jugador1.rect.bottom=pisoo.rect.top
+            print(jugador1.statey)
+        elif jugador1.statey == "falling":
+
+            jugadorPosY = jugador1.rect.top= jugador1.fallingTimer*gravedad
+>>>>>>> Stashed changes
             jugador1.rect.bottom=jugador1.rect.top+132
             jugador1.fallingTimer += 0.15
             if col==True:
                 jugador1.fallingTimer=0
 
+<<<<<<< Updated upstream
         if jugador1.statey =='jumping':
 
             velocidad= (jugador1.jumptimer / 15.0) * -gravedad
             jugadorPosY+=velocidad
+=======
+        elif col==True and jugador1.statey == "jumping":
+            print(jugador1.statey)
+            jugadorPosY = (jugador1.jump_timer / 15.0) * -gravedad
+>>>>>>> Stashed changes
             jugador1.jumptimer -= 1
             #print(jugador1.jumptimer)
         
