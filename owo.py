@@ -1,7 +1,6 @@
 import pygame,sys
 from pygame.locals import*
 from jugador import*
-from fondo import *
 #Estos colores funcionan para dibujar en pantalla simplemente se crean las variables 
 #para usarlos con mayor facilidad 
 
@@ -91,8 +90,6 @@ def MiJuego():
     global IsJump 
     IsJump = False
     jugador1 = Jugador(jugadorPosY , desp  , jugadorPosX)
-    pygame.time.set_timer(pygame.USEREVENT + 1 , 1000)
-
 
 
 
@@ -114,8 +111,6 @@ def MiJuego():
                 sys.exit()
             '''if event.type== USEREVENT + 1:
                 fondo.update(pantalla)'''
-
-           
 
         pygame.event.pump()
         Key = pygame.key.get_pressed()
