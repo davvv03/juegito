@@ -78,10 +78,10 @@ def MiJuego():
     jugadorPosX = 0
     jugadorPosY = 528
     arbusto1 = Arbusto()
-
+    pisoo=piso(0,662,Ancho,30,negro)
     reloj = pygame.time.Clock()
     posimagen = 0
-    gravedad = 20
+    gravedad = 80
     col=False
     jumpcount = 10 
     desp = 2        
